@@ -4,7 +4,19 @@
  */
 namespace Itool\DataBase;
 
-class Mysqli{
+class Mysqli implements IDataBase{
+	protected $conn;
+	public function connect($dbname,$host,$user,$pass){
+		$conn = mysqli_connect($host,$user,$pass,$dbname);
+		$this->conn = $conn;
+	}
 
-	
+	public function query($sql){
+		$res = mysqli_query($this->conn,$sql);
+		return $res;
+	}
+
+	public function close(){
+		unset($this->conn);
+	}
 }
