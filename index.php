@@ -9,6 +9,11 @@ include DIR.'/Itool/Loader.php';
 // 注册自动加载函数
 spl_autoload_register('\\Itool\\Loader::autoload');
 
-Itool\Factory::getUser();
-$user = Itool\Register::get('user');
-var_dump($user);
+// 传入id值,user表字段为id,name,phone
+$user = new \Itool\object(1);
+//$name = $user->name;
+//$phone = $user->phone;
+
+// 对象关系映射主要就是通过construct,get,set,destruct使用来达成
+$user->name = 'zhongwei';
+$user->phone = '182381283';

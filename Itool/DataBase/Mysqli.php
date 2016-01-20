@@ -5,8 +5,9 @@
 namespace Itool\DataBase;
 
 class Mysqli implements IDataBase{
+	
 	protected $conn;
-	public function connect($dbname,$host,$user,$pass){
+	public function connect($host,$user,$pass,$dbname){
 		$conn = mysqli_connect($host,$user,$pass,$dbname);
 		$this->conn = $conn;
 	}
