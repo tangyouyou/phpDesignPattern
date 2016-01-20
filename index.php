@@ -10,15 +10,21 @@ include DIR.'/Itool/Loader.php';
 spl_autoload_register('\\Itool\\Loader::autoload');
 echo '<meta http-equiv="content-type" content="text/html;charset=utf-8">';
 
-// 策略模式例子
-if (isset($_GET['id'])) {//老板
-	$user = new \Itool\BossStrategy;
-} else {//程序猿
-	$user = new \Itool\CoderStrategy;
-}
-//header("Content-type=text/html;charset=utf8");
-$user->working();
-$user->resting();
+
+include DIR.'/Itool/test/observer.php';
+
+
+
+
+// // 策略模式例子
+// if (isset($_GET['id'])) {//老板
+// 	$user = new \Itool\BossStrategy;
+// } else {//程序猿
+// 	$user = new \Itool\CoderStrategy;
+// }
+// //header("Content-type=text/html;charset=utf8");
+// $user->working();
+// $user->resting();
 
 
 // 对象关系映射例子
