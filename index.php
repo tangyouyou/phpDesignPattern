@@ -11,7 +11,11 @@ spl_autoload_register('\\Itool\\Loader::autoload');
 echo '<meta http-equiv="content-type" content="text/html;charset=utf-8">';
 
 
-include DIR.'/Itool/test/observer.php';
+
+
+
+// 观察者模式例子
+//include DIR.'/Itool/test/observer.php';
 
 
 
