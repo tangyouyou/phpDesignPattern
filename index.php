@@ -10,8 +10,15 @@ include DIR.'/Itool/Loader.php';
 spl_autoload_register('\\Itool\\Loader::autoload');
 echo '<meta http-equiv="content-type" content="text/html;charset=utf-8">';
 
-
-
+// 装饰器模式例子
+$canvas = new \Itool\Canvas();
+$canvas->init();
+$canvas->addDecorator(new \Itool\SizeDrawDecorator(20));
+$canvas->addDecorator(new \Itool\ColorDrawDecorator('blue'));
+$canvas->rect(5,8,5,6);
+$canvas->draw();
+//$a = new \Itool\SizeDrawDecorator();
+//var_dump($a);
 
 
 // 观察者模式例子
